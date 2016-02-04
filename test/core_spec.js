@@ -1,26 +1,15 @@
 import { expect } from 'chai';
-import {setEntries, next, vote} from '../src/core';
+import {setEntries, next, vote, INITIAL_STATE} from '../src/core';
 
 describe('application logic', () => {
     describe('setEntries', () => {
         it('adds the entries to the state', () => {
-            const state = {entries:[]};
+            const state = INITIAL_STATE;
             const entries = ['Trainspotting', '28 Days Later'];
-            const nextState = setEntries(state, entries);
-            expect(nextState).to.deep.equal({
-                entries: ['Trainspotting', '28 Days Later']
-            });
-        });
+            const nextState = setEntries(state.entries, entries);
 
-        it('converts to immutable', () => {
-            const state = {entries:[]};
-            const entries = ['Trainspotting', '28 Days Later'];
-            const nextState = setEntries(state, entries);
-            expect(nextState).to.deep.equal({
-                entries: ['Trainspotting', '28 Days Later']
-            });
+            expect(nextState).to.deep.equal(['Trainspotting', '28 Days Later']);
         });
-
     });
     describe('next', () => {
         it('takes the next two entries under vote', () => {
@@ -97,45 +86,32 @@ describe('application logic', () => {
     describe( 'vote' , () => {
         it( 'creates a tally for the voted entry' , () => {
             const state = {
-                vote: {
-                    pair : ['Trainspotting' , '28 Days Later'],
-                    tally: {}
-                },
-                entries: []
+                pair: ['Trainspotting' , '28 Days Later']
             };
             const nextState = vote(state, 'Trainspotting' );
             expect(nextState).to.deep.equal({
-                vote: {
-                    pair: ['Trainspotting' , '28 Days Later'],
-                    tally: {
-                        'Trainspotting': 1
-                    }
-                },
-                entries: []
+                pair : ['Trainspotting' , '28 Days Later'],
+                tally: {
+                    'Trainspotting': 1
+                }
             });
         });
 
         it( 'adds to existing tally for the voted entry' , () => {
             const state = {
-                vote: {
-                    pair: ['Trainspotting' , '28 Days Later'],
-                    tally: {
-                        'Trainspotting' : 3 ,
-                        '28 Days Later' : 2
-                    }
-                },
-                entries: []
+                pair : ['Trainspotting' , '28 Days Later'],
+                tally: {
+                    'Trainspotting' : 3 ,
+                    '28 Days Later' : 2
+                }
             };
             const nextState = vote(state, 'Trainspotting' );
             expect(nextState).to.deep.equal({
-                vote: {
-                    pair: ['Trainspotting' , '28 Days Later'],
-                    tally: {
-                        'Trainspotting' : 4 ,
-                        '28 Days Later' : 2
-                    }
-                },
-                entries: []
+                pair : ['Trainspotting' , '28 Days Later'],
+                tally: {
+                    'Trainspotting' : 4 ,
+                    '28 Days Later' : 2
+                }
             });
         });
 

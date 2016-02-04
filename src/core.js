@@ -11,15 +11,19 @@ let getWinners = (vote) => {
         return [a, b];
     }
 };
+
+export const INITIAL_STATE = {};
+
 export function setEntries(state, entries) {
+    const oldEntries = state['entries'] ? state['entries'] : [];
     return {
         ...state,
         entries: [
-            ...state['entries'],
+            ...oldEntries,
             ...entries
         ]
     };
-}
+};
 export function next(state) {
     const {
         entries,
@@ -45,7 +49,7 @@ export function next(state) {
             entries: entrie
         };
     }
-}
+};
 export function vote(state, entry) {
     let tally = state.vote.hasOwnProperty('tally') ? state.vote['tally'] : {};
     tally = {
@@ -59,4 +63,4 @@ export function vote(state, entry) {
             tally
         }
     };
-}
+};

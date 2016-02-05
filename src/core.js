@@ -1,6 +1,8 @@
 let getWinners = (vote) => {
-    if (!vote) return [];
     const [a, b] = vote['pair'];
+    if (!a || !b) {
+        return [];
+    }
     const aVotes = vote['tally'].hasOwnProperty(a) ? vote['tally'][a] : 0;
     const bVotes = vote['tally'].hasOwnProperty(b) ? vote['tally'][b] : 0;
     if (aVotes > bVotes) {
@@ -48,6 +50,7 @@ export function next(state) {
             entrie = newEntries.filter((item, idx) => idx >= 2);
         return {
             vote:{
+                ...vote,
                 pair
             },
             entries: entrie

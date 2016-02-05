@@ -8,7 +8,10 @@ export default function reducer(state = INITIAL_STATE, action) {
 				entries: setEntries(state.entries, action.entries)
 			};
 		case 'NEXT':
-			return next(state);
+			return {
+				...state,
+				...next(state)
+			};
 		case 'VOTE':
 			return {
 				...state,

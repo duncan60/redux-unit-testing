@@ -4,9 +4,9 @@ import { INITIAL_STATE } from '../src/core';
 
 describe('reducer', () => {
     it('handles SET_ENTRIES', () => {
-        const initialState = INITIAL_STATE;
+        const state = INITIAL_STATE;
         const action = {type: 'SET_ENTRIES', entries: ['Trainspotting']}
-        const nextState = reducer(initialState, action);
+        const nextState = reducer(state, action);
 
         expect(nextState).to.deep.equal({
             entries: ['Trainspotting'],
@@ -19,31 +19,34 @@ describe('reducer', () => {
     });
 
     it('hendles NEXT', () => {
-        const initialState = {
+        const state = {
+            ...INITIAL_STATE,
             entries : ['Trainspotting', '28 Days Later']
         };
         const action = {type: 'NEXT'};
-        const nextState = reducer(initialState, action);
-
+        const nextState = reducer(state, action);
         expect(nextState).to.deep.equal({
             vote: {
-                pair: ['Trainspotting', '28 Days Later'],
+                pair : ['Trainspotting', '28 Days Later'],
+                tally: {}
             },
-            entries: []
+            entries: [],
+            winner : ''
         });
     });
 
     it('hendles VOTE', () => {
-        const initialState = {
+        const state = {
+            ...INITIAL_STATE,
             vote: {
                 pair: ['Trainspotting', '28 Days Later']
-            },
-            entries: []
+            }
         };
         const action = {type: 'VOTE', entry: 'Trainspotting'};
-        const nextState = reducer(initialState, action);
+        const nextState = reducer(state, action);
 
         expect(nextState).to.deep.equal({
+            ...INITIAL_STATE,
             vote: {
                 pair : ['Trainspotting', '28 Days Later'],
                 tally: { Trainspotting : 1 }
@@ -53,7 +56,7 @@ describe('reducer', () => {
     });
 
     it('has an initial state', () => {
-        const action = {type: 'SET_ENTRIES', entries : ['Trainspotting']};
+        const action = {type: 'SET_ENTRIES', entries: ['Trainspotting']};
         const nextState = reducer(undefined, action);
 
         expect(nextState).to.deep.equal({
@@ -84,6 +87,14 @@ describe('reducer', () => {
         });
 
         expect(finalState).to.deep.equal({
+            entries: [],
+            vote   : {
+                pair : ['Trainspotting', '28  Days  Later'],
+                tally: {
+                    'Trainspotting'  : 2,
+                    '28  Days  Later': 1
+                }
+            },
             winner: 'Trainspotting'
         });
     });

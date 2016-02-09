@@ -1,15 +1,15 @@
 {
-  "name": "voting-server",
+  "name": "redux-es6-unit-testing",
   "version": "0.0.1",
-  "description": "pratice redux and immutable",
+  "description": "pratice redux and unit testion",
   "main": "index",
   "scripts": {
-    "compile": "babel --presets es2015,stage-0 -d src/",
     "start": "babel-node index.js",
     "test": "mocha --compilers js:babel-core/register  --require ./test/test_helper.js  --recursive",
     "test:watch": "npm run test -- --watch"
   },
-  "author": "",
+  "repository": "duncan60/redux-es6-unit-testing",
+  "author": "Duncan Du",
   "license": "ISC",
   "devDependencies": {
     "babel-cli": "^6.1.18",

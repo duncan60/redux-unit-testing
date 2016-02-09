@@ -9,7 +9,7 @@
     "test:watch": "npm run test -- --watch"
   },
   "repository": "duncan60/redux-es6-unit-testing",
-  "author": "Duncan Du",
+  "author": "Duncan Du <tmduncan60@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "babel-cli": "^6.1.18",

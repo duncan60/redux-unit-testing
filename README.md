@@ -23,5 +23,5 @@ $ npm run test:watch
 [mocha](https://mochajs.org/)
 
 ##assertion library
-[Chai Assertion Library](http://chaijs.com/)
+[Chai](http://chaijs.com/)
 

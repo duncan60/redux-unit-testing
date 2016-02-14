@@ -1,12 +1,12 @@
 {
   "name": "redux-es6-unit-testing",
   "version": "0.0.1",
-  "description": "pratice redux and unit testion",
+  "description": "pratice redux and unit testing",
   "main": "index",
   "scripts": {
-    "start": "babel-node index.js",
     "test": "mocha --compilers js:babel-core/register  --require ./test/test_helper.js  --recursive",
-    "test:watch": "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch",
+    "devtest": "webpack-dev-server --config webpack-mocha.config.js"
   },
   "repository": "duncan60/redux-es6-unit-testing",
   "author": "Duncan Du <tmduncan60@gmail.com>",
@@ -14,10 +14,15 @@
   "devDependencies": {
     "babel-cli": "^6.1.18",
     "babel-core": "^6.1.18",
+    "babel-loader": "^6.2.2",
     "babel-preset-es2015": "^6.1.18",
     "babel-preset-stage-0": "^6.1.18",
-    "chai": "^3.2.0",
-    "mocha": "^2.2.5"
+    "chai": "^3.5.0",
+    "jsdom-no-contextify": "^3.1.0",
+    "mocha": "^2.4.5",
+    "react-hot-loader": "^1.3.0",
+    "webpack": "^1.12.13",
+    "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
     "babel-polyfill": "^6.1.18",

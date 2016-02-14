@@ -17,6 +17,9 @@ $ npm install
 
 ``` text
 $ npm run test:watch
+# or
+$ npm run devtest
+# open localhost:3001/test in browser
 ```
 
 ##test framework

@@ -25,8 +25,8 @@ $ npm run devtest
 ##test framework
 [mocha](https://mochajs.org/)
 
-[测试框架 Mocha 实例教程](http://www.ruanyifeng.com/blog/2015/12/a-mocha-tutorial-of-examples.html)
-
 ##assertion library
 [Chai](http://chaijs.com/)
 
+##資源
+[测试框架 Mocha 实例教程](http://www.ruanyifeng.com/blog/2015/12/a-mocha-tutorial-of-examples.html)

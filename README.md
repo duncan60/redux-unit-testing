@@ -1,6 +1,6 @@
 # redux-unit-testing
 
-pratice redux & es6 to unit-testing
+This pratice focus to try redux unit-testing
 
 tutorial from
 

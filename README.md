@@ -1,4 +1,4 @@
-# redux-es6-unit-testing
+# redux-unit-testing
 
 pratice redux & es6 to unit-testing
 

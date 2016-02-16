@@ -1,5 +1,5 @@
 {
-  "name": "redux-es6-unit-testing",
+  "name": "redux-unit-testing",
   "version": "0.0.1",
   "description": "pratice redux and unit testing",
   "main": "index",
@@ -8,7 +8,7 @@
     "test:watch": "npm run test -- --watch",
     "devtest": "webpack-dev-server --port 3001 --hot --colors --config webpack.test.config.js"
   },
-  "repository": "duncan60/redux-es6-unit-testing",
+  "repository": "duncan60/react-unit-testing",
   "author": "Duncan Du <tmduncan60@gmail.com>",
   "license": "MIT",
   "devDependencies": {

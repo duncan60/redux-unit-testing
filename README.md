@@ -32,3 +32,5 @@ $ npm run devtest
 [测试框架 Mocha 实例教程](http://www.ruanyifeng.com/blog/2015/12/a-mocha-tutorial-of-examples.html)
 
 [React 测试入门教程](http://www.ruanyifeng.com/blog/2016/02/react-testing-tutorial.html)
+
+[簡單玩 redux unit-test](http://www.checkme.tw/wordpress/redux-unit-testing/)

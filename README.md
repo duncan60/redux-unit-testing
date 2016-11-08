@@ -34,3 +34,5 @@ $ npm run devtest
 [React 测试入门教程](http://www.ruanyifeng.com/blog/2016/02/react-testing-tutorial.html)
 
 [簡單玩 redux unit-test](http://www.checkme.tw/wordpress/redux-unit-testing/)
+
+[redux Writing Tests](http://redux.js.org/docs/recipes/WritingTests.html)
